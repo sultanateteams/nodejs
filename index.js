@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
           res.end(content);
         }
       );
-    } else if (req.url == "/about") {
+    } else if (req.url == "/about"){
       fs.readFile(
         path.join(__dirname, "templates", "about.html"),
         "utf-8",
