@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
           res.end(content);
         }
       );
-    } else if (req.url == "/about"){
+    } else if (req.url == "/about") {
       fs.readFile(
         path.join(__dirname, "templates", "about.html"),
         "utf-8",
@@ -32,6 +32,10 @@ const server = http.createServer((req, res) => {
           res.end(content);
         }
       );
+    } else if (req.url == "/api/user") {
+      const user = { name: "Ali", job: "Software engineer" };
+      res.writeHead(200, { "content-type": "text/json" });
+      res.end(JSON.stringify(user));
     }
   } else if (req.method == "POST") {
     const body = [];
