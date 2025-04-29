@@ -1,5 +1,5 @@
 const getArgs = (args) => {
-  console.log(args);
+  //   console.log(args);
   const res = {};
   args.slice(2).forEach((value, index, array) => {
     if (value.charAt(0) == "-") {
@@ -12,8 +12,8 @@ const getArgs = (args) => {
       }
     }
   });
-  console.log(res);
+  //   console.log(res);
   return res;
 };
 
-module.exports = getArgs;
+export default getArgs;
