@@ -28,8 +28,8 @@ const isExist = async (path) => {
 };
 
 const getKeyValue = async (key) => {
-  if (isExist(filePath)) {
-    const file = fs.promises.readFile(filePath);
+  if (await isExist(filePath)) {
+    const file = await fs.promises.readFile(filePath);
     const value = JSON.parse(file)[key];
     return value;
   }

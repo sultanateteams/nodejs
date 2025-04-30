@@ -1,4 +1,5 @@
 import getArgs from "./helpers/args.js";
+import getWeather from "./services/api.service.js";
 import {
   printError,
   printSuccess,
@@ -25,7 +26,8 @@ const startCli = () => {
     printHelp();
   }
   if (args.s) {
-    printSuccess("Saving city");
+    // printSuccess("Saving city");
+    getWeather(args.s);
   }
   if (args.t) {
     saveToken(args.t);
