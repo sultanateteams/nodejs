@@ -4,15 +4,15 @@ import {
   printError,
   printSuccess,
   printHelp,
+  printWeather,
 } from "./services/log.services.js";
 import { saveKeyValue, getKeyValue } from "./services/storage.service.js";
 
 const getForcast = async () => {
   const args = await getArgs(process.argv);
-  console.log("args:  ", args);
   try {
     const response = await getWeather();
-    console.log("response:  ", response.data);
+    printWeather(response.data);
   } catch (error) {
     if (error?.response?.status == 404) {
       printError("City not found");
